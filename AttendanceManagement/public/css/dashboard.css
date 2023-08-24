@@ -22,7 +22,7 @@ i {
 }
 
 .sideBar h2 {
-    color: aliceblue;
+    color: rgb(188, 255, 188);
     text-align: center;
 }
 
@@ -82,7 +82,7 @@ i {
 }
 
 .sideBar .accountInfoDisplay .nameAndRole p:nth-child(1) {
-    color: white;
+    color: rgb(188, 255, 188);
 }
 
 .sideBar .accountInfoDisplay .nameAndRole p:nth-child(2) {
