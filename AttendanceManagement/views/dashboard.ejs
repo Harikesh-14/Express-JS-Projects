@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | <%= firstName %>
+    </title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+
+<body>
+    <!-- side bar components -->
+    <div class="sideBar">
+        <h2><i class="fa-solid fa-money-bill-transfer"></i> Ease Conversion</h2>
+
+        <!-- main tools -->
+        <div class="mainTools">
+            <ul>
+                <li><i class="fa-solid fa-table-columns"></i> Dashboard</li>
+                <li><i class="fa-solid fa-chart-simple"></i> Revenue Analytics</li>
+                <li><i class="fa-solid fa-map"></i> Journeys</li>
+                <li><i class="fa-solid fa-chart-pie"></i> Performance</li>
+                <li><i class="fa-solid fa-gears"></i> Data Platform</li>
+            </ul>
+        </div>
+
+        <!-- optional tools -->
+        <div class="optionalTools">
+            <ul>
+                <li><i class="fa-solid fa-gear"></i> Settings</li>
+                <li><i class="fa-solid fa-circle-info"></i> Help</li>
+            </ul>
+        </div>
+
+        <!-- Account Info Display -->
+        <div class="accountInfoDisplay">
+
+            <!-- profile pic -->
+            <img src="pics/loginAvatar.png">
+
+            <!-- profile name and role -->
+            <div class="nameAndRole">
+                <p><%= firstName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>
+                <p><%= teacherID %></p>
+            </div>
+
+            <!-- toggle menu -->
+            <div class="toggleMenu" id="toggleMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="toggleDialogBox hide" id="toggleDialogBox">
+                <button type="button">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/e6506fb756.js" crossorigin="anonymous"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+i {
+    margin-right: 10px;
+}
+
+.sideBar {
+    position: fixed;
+    height: 100vh;
+    width: 18vw;
+    background-color: #191C27;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 20px 20px 20px 30px;
+}
+
+.sideBar h2 {
+    color: aliceblue;
+    text-align: center;
+}
+
+.sideBar .mainTools,
+.sideBar .optionalTools {
+    color: #cccccc65;
+}
+
+.sideBar .mainTools ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    margin-top: 20px;
+}
+
+.sideBar .mainTools ul li {
+    list-style: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.sideBar .mainTools ul li:hover {
+    color: rgb(188, 255, 188)
+}
+
+.sideBar .optionalTools ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 20px;
+}
+
+.sideBar .optionalTools ul li {
+    list-style: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.sideBar .optionalTools ul li:hover {
+    color: rgb(188, 255, 188)
+}
+
+.sideBar .accountInfoDisplay {
+    margin-top: auto;
+    margin-bottom: 50px;
+    display: flex;
+    column-gap: 10px;
+    flex-direction: row;
+    border-top: 1px solid #cccccc42;
+    padding-top: 15px;
+}
+
+.sideBar .accountInfoDisplay img {
+    height: 35px;
+    width: 35px;
+    margin-top: 6px;
+}
+
+.sideBar .accountInfoDisplay .nameAndRole p:nth-child(1) {
+    color: white;
+}
+
+.sideBar .accountInfoDisplay .nameAndRole p:nth-child(2) {
+    color: #cccccc65;
+}
+
+.sideBar .accountInfoDisplay .toggleMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 15px;
+    margin: 5px 20px 0 auto;
+    padding: 10px 17px;
+    cursor: pointer;
+}
+
+.sideBar .accountInfoDisplay .toggleMenu:hover{
+    background-color: #101219;
+    border-radius: 100%;
+}
+
+.sideBar .accountInfoDisplay .toggleMenu span {
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: #ccc;
+}
+
+.sideBar .accountInfoDisplay .toggleDialogBox{
+    position: absolute;
+    background-color: #161821;
+    padding: 10px;
+    margin-left: 17vw;
+    margin-top: -40px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
+    border-radius: 3px;
+}
+
+.sideBar .accountInfoDisplay .toggleDialogBox button{
+    width: 100px;
+    height: 35px;
+    background-color: #de423c;
+    border: none;
+    border-radius: 3px;
+    font-size: 100%;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sideBar .accountInfoDisplay .toggleDialogBox button:hover{
+    background-color: #e9322c;
+}
+
+.hide{
+    display: none;
+}

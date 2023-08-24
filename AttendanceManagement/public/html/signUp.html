@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply | Register</title>
+    <link rel="stylesheet" href="../css/signUp.css">
+</head>
+
+<body>
+    <form method="post">
+
+        <!-- login avatar -->
+        <div class="upperSide">
+            <img src="../pics/loginAvatar.png" alt="Login Avatar">
+            <h1>Register Yourself</h1>
+        </div>
+        <div class="lowerSide">
+
+            <!-- First Name -->
+            <input type="text" name="signUpFirstName" id="signUpFirstName" placeholder="First Name*" required>
+
+            <!-- Last Name -->
+            <input type="text" name="signUpLastName" id="signUpLastName" placeholder="Last Name*" required>
+
+            <!-- Email Id -->
+            <input type="email" name="signUpEmail" id="signUpEmail" placeholder="Email ID*" required>
+
+            <!-- Teacher's ID -->
+            <input type="text" name="signUpTeacherID" id="signUpTeacherID" placeholder="Teacher's ID*" required>
+
+            <!-- Phone Number -->
+            <input type="number" name="signUpPhone" id="signUpPhone" placeholder="Phone Number*" required>
+
+            <!-- DOB and Gender -->
+            <div class="DOBgender">
+
+                <!-- Date of Birth -->
+                <input type="date" name="signUpDOB" id="signUpDOB" required>
+
+                <!-- Gender -->
+                <select name="signUpGender" id="signUpGender">
+                    <option value="0">Gender*</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Others</option>
+                </select>
+            </div>
+
+            <!-- Select states -->
+            <select name="signUpStates" id="signUpStates">
+                <option value="0">Select your state</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="Tamil Nadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="West Bengal">West Bengal</option>
+                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                <option value="Chandigarh">Chandigarh</option>
+                <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                <option value="Daman and Diu">Daman and Diu</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
+            </select>
+
+            <!-- Password -->
+            <input type="password" name="signUpPassword" id="signUpPassword" placeholder="Password*" required>
+
+            <!-- Terms&Conditions -->
+            <div class="TAndC">
+                <input type="checkbox" id="termsAndConditions" value="ticked" required>
+                <p>Terms and Conditions</p>
+                <p style="margin: -5px -7px 0 -5px; color: red;">*</p>
+            </div>
+
+            <!-- Button to register -->
+            <button type="submit" id="signUpButton" disabled>Register</button>
+        </div>
+
+        <!-- SignUp Box -->
+        <div class="signUpBox">
+            <button type="submit" id="signInButton">Sign In</button>
+        </div>
+    </form>
+    <script>
+        // creating the js vars here
+        let termsAndConditions = document.getElementById('termsAndConditions');
+        let signUpButton = document.getElementById('signUpButton');
+        let signInButton = document.getElementById('signInButton');
+
+        // disabling the button if checkbox is not checked
+        termsAndConditions.addEventListener('change', function () {
+            if (termsAndConditions.checked) {
+                signUpButton.disabled = false;
+            } else {
+                signUpButton.disabled = true;
+            }
+        });
+
+        // linking the sign in button to the sign in page
+        signInButton.addEventListener('click', () => {
+            location.href = "/";
+        })
+    </script>
+</body>
+
+</html>

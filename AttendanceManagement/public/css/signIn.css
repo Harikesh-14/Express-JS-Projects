@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+}
+
+body {
+    background-image: url('../pics/backgroundPic.jpg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+form {
+    width: 30vw;
+    height: auto;
+    padding: 1rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+form .upperSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form .upperSide img {
+    height: 6rem;
+    width: 6rem;
+    margin-top: -70px;
+}
+
+form .lowerSide{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 20px;
+}
+
+form .lowerSide input{
+    height: 2.6rem;
+    border: transparent;
+    border-radius: 3px;
+    padding-left: 10px;
+    font-size: 100%;
+    background-color: rgba(255, 255, 255, 0.719);
+}
+
+form .lowerSide .rememberMe{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+.rememberMe input{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.rememberMe label{
+    margin-top: 8px;
+    
+}
+
+.rememberMe a{
+    margin-top: 8px;
+    margin-left: auto;
+    color: black;
+}
+
+form .lowerSide button{
+    height: 2.8rem;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #4967a3;
+    color: white;
+    cursor: pointer;
+}
+
+form .lowerSide button:hover{
+    background-color: #3458a0;
+}
+
+form .register{
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px 0 0 0;
+    border-top: 1px dashed #000;
+    display: flex;
+    justify-content: center;
+}
+
+form .register button {
+    width: 40%;
+    height: 40px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow .25s ease;
+}
+
+form .register button:hover{
+    box-shadow: inset 0 40px black;
+    color: white;
+}
