@@ -10,50 +10,96 @@
 </head>
 
 <body>
-    <!-- side bar components -->
-    <div class="sideBar">
-        <h2>Attendance Manager</h2>
+    <div class="mainContainer">
+        <!-- side bar components -->
+        <div class="sideBar">
+            <h2>Attendance Manager</h2>
 
-        <!-- main tools -->
-        <div class="mainTools">
-            <ul>
-                <li><i class="fa-solid fa-table-columns"></i> Dashboard</li>
-                <li><i class="fa-solid fa-chart-simple"></i> Analytics</li>
-                <li><i class="fa-solid fa-map"></i> Schedule</li>
-                <li><i class="fa-solid fa-chart-pie"></i> Members</li>
-                <li><i class="fa-solid fa-gears"></i> Notification</li>
-            </ul>
-        </div>
-
-        <!-- optional tools -->
-        <div class="optionalTools">
-            <ul>
-                <li><i class="fa-solid fa-gear"></i> Settings</li>
-                <li><i class="fa-solid fa-circle-info"></i> Help Center</li>
-            </ul>
-        </div>
-
-        <!-- Account Info Display -->
-        <div class="accountInfoDisplay">
-
-            <!-- profile pic -->
-            <img src="pics/loginAvatar.png">
-
-            <!-- profile name and role -->
-            <div class="nameAndRole">
-                <p><%= firstName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>
-                <p><%= teacherID %></p>
+            <!-- main tools -->
+            <div class="mainTools">
+                <ul>
+                    <li class="active"><i class="fa-solid fa-table-columns"></i> Dashboard</li>
+                    <li><i class="fa-solid fa-chart-simple"></i> Analytics</li>
+                    <li><i class="fa-solid fa-map"></i> Schedule</li>
+                    <li><i class="fa-solid fa-chart-pie"></i> Members</li>
+                    <li><i class="fa-solid fa-gears"></i> Notification</li>
+                </ul>
             </div>
 
-            <!-- toggle menu -->
-            <div class="toggleMenu" id="toggleMenu">
-                <span></span>
-                <span></span>
-                <span></span>
+            <!-- optional tools -->
+            <div class="optionalTools">
+                <ul>
+                    <li><i class="fa-solid fa-gear"></i> Settings</li>
+                    <li><i class="fa-solid fa-circle-info"></i> Help Center</li>
+                </ul>
             </div>
 
-            <div class="toggleDialogBox hide" id="toggleDialogBox">
-                <button type="button">Logout</button>
+            <!-- Account Info Display -->
+            <div class="accountInfoDisplay">
+
+                <!-- profile pic -->
+                <img src="pics/loginAvatar.png">
+
+                <!-- profile name and role -->
+                <div class="nameAndRole">
+                    <p><%= firstName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>
+                    <p><%= teacherID %></p>
+                </div>
+
+                <!-- toggle menu -->
+                <div class="toggleMenu" id="toggleMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="toggleDialogBox hide" id="toggleDialogBox">
+                    <button type="button">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightComp">
+            <!-- first Section -->
+            <div class="firstSection">
+                <p>Employee Details</p>
+                <div class="empDetails">
+
+                    <!-- image of the faculty -->
+                    <img src="#" alt="Employee Image">
+
+                    <!-- main box of necessary details -->
+                    <div class="nameAndDetails">
+                        <!-- role of the employee -->
+                        <div class="role">
+                            <p>Role</p>
+                            <p>Teacher</p>
+                        </div>
+                        <!-- phone number of the employee -->
+                        <div class="phoneNumber">
+                            <p>Phone Number</p>
+                            <p>2739273821</p>
+                        </div>
+                        <!-- email address of the employee -->
+                        <div class="role">
+                            <p>Email Address</p>
+                            <p>asbdjjkdajskdk@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- important info -->
+                <div class="infoForFaculty">
+                    <!-- in time of the employee -->
+                    <div class="inTime">
+                        <p>08:00 AM</p>
+                        <p>In Time</p>
+                    </div>
+
+                    <div class="outTime">
+                        <p>06:30 PM</p>
+                        <p>Check Out Time</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
