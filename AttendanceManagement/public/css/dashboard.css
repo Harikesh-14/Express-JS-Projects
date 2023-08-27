@@ -6,13 +6,10 @@
     font-family: 'Poppins';
 }
 
-i {
-    margin-right: 10px;
-}
-
 .mainContainer{
     display: flex;
     flex-direction: row;
+    height: 100vh;
 }
 
 .mainContainer .sideBar {
@@ -49,6 +46,11 @@ i {
     list-style: none;
     font-size: 1.1rem;
     cursor: pointer;
+}
+
+.mainContainer .sideBar .mainTools ul li>i{
+    margin-right: 10px;
+
 }
 
 .mainContainer .sideBar .mainTools ul li:hover {
@@ -215,6 +217,71 @@ i {
     margin-top: 5px;
     font-size: 1.1rem;
     font-weight: bold;
+}
+
+.firstSection .infoForFaculty{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0;
+}
+
+.firstSection .infoForFaculty .facultyInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 220px;
+    height: 70px;
+    background-color: #cccccc42;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
+    cursor: pointer;
+}
+
+.firstSection .infoForFaculty .facultyInfo>p{
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    background-color: #cccccc65;
+    border-radius: 100%;
+    color: #fff;
+}
+
+.firstSection .infoForFaculty .facultyInfo .bunch{
+    padding: 0 10px;
+    color: #fff;
+}
+
+.infoForFaculty .facultyInfo .bunch p:nth-child(1){
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.infoForFaculty .facultyInfo .bunch p:nth-child(2){
+    font-size: 0.8rem;
+}
+
+.firstSection .reportError{
+    padding: 20px 0;
+}
+
+.firstSection .reportError button{
+    padding: 10px;
+    background-color: #DC3545;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    float: right;
+    cursor: pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.29);
+}
+
+.firstSection .reportError button:hover{
+    background-color: #b02b38;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.29);
 }
 
 .hide{

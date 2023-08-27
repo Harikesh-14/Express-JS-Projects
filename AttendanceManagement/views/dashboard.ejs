@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="toggleDialogBox hide" id="toggleDialogBox">
-                    <button type="button">Logout</button>
+                    <button type="button" id="logoutButton">Logout</button>
                 </div>
             </div>
         </div>
@@ -91,18 +91,46 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- important info -->
                 <div class="infoForFaculty">
                     <!-- in time of the employee -->
-                    <div class="inTime">
-                        <p>08:00 AM</p>
-                        <p>In Time</p>
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-right-from-bracket"></i></p>
+                        <div class="bunch">
+                            <p>08:00 AM</p>
+                            <p>In Time</p>
+                        </div>
                     </div>
 
-                    <div class="outTime">
-                        <p>06:30 PM</p>
-                        <p>Check Out Time</p>
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-door-open"></i></p>
+                        <div class="bunch">
+                            <p>06:30 PM</p>
+                            <p>Check Out Time</p>
+                        </div>
                     </div>
+
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-location-dot"></i></p>
+                        <div class="bunch">
+                            <p><%= location %></p>
+                            <p>Native</p>
+                        </div>
+                    </div>
+
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-user"></i></p>
+                        <div class="bunch">
+                            <p><%= gender %></p>
+                            <p>Gender</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- report error button -->
+                <div class="reportError">
+                    <button type="button" class="report"><i class="fa-solid fa-circle-exclamation"></i> Report Error</button>
                 </div>
             </div>
         </div>

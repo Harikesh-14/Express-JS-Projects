@@ -25,8 +25,9 @@ router.post('/', async (req, res) => {
             const emailID = userDetails.emailID;
             const phoneNumber = userDetails.phoneNumber;
             const teacherID = userDetails.teacherID;
-            // res.send(`Welcome ${firstName}! You are from ${location}`);
-            res.render('dashboard', {firstName, teacherID, lastName, emailID, phoneNumber}) // don't use forward slash
+            const location = userDetails.location;
+            const gender = userDetails.gender;
+            res.render('dashboard', {firstName, teacherID, lastName, emailID, phoneNumber, location, gender}) // don't use forward slash
         } else{
             res.send(`Login Failed`)
         }

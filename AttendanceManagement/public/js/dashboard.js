@@ -12,3 +12,9 @@ document.addEventListener('click', (event) => {
         toggleDialogBox.classList.add('hide');
     }
 })
+
+let logoutButton = document.getElementById('logoutButton')
+
+logoutButton.addEventListener('click', () => {
+    location.href = '/'
+})
