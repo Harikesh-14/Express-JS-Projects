@@ -21,9 +21,12 @@ router.post('/', async (req, res) => {
         if(userDetails){
             // we can directly access the table values. It is not mandatory to be specified in the userDetails block
             const firstName = userDetails.firstName;
+            const lastName = userDetails.lastName;
+            const emailID = userDetails.emailID;
+            const phoneNumber = userDetails.phoneNumber;
             const teacherID = userDetails.teacherID;
             // res.send(`Welcome ${firstName}! You are from ${location}`);
-            res.render('dashboard', {firstName, teacherID}) // don't use forward slash
+            res.render('dashboard', {firstName, teacherID, lastName, emailID, phoneNumber}) // don't use forward slash
         } else{
             res.send(`Login Failed`)
         }

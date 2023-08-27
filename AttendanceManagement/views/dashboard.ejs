@@ -66,24 +66,28 @@
                 <div class="empDetails">
 
                     <!-- image of the faculty -->
-                    <img src="#" alt="Employee Image">
+                    <img src="pics/loginAvatar.png" alt="Employee Image">
 
                     <!-- main box of necessary details -->
                     <div class="nameAndDetails">
-                        <!-- role of the employee -->
-                        <div class="role">
-                            <p>Role</p>
-                            <p>Teacher</p>
-                        </div>
-                        <!-- phone number of the employee -->
-                        <div class="phoneNumber">
-                            <p>Phone Number</p>
-                            <p>2739273821</p>
-                        </div>
-                        <!-- email address of the employee -->
-                        <div class="role">
-                            <p>Email Address</p>
-                            <p>asbdjjkdajskdk@gmail.com</p>
+                        <p><%= firstName %> <%= lastName %></p>
+
+                        <div class="boxes">
+                            <!-- role of the employee -->
+                            <div class="box">
+                                <p>Role</p>
+                                <p>Teacher</p>
+                            </div>
+                            <!-- phone number of the employee -->
+                            <div class="box">
+                                <p>Phone Number</p>
+                                <p>(+91) <%= phoneNumber %></p>
+                            </div>
+                            <!-- email address of the employee -->
+                            <div class="box">
+                                <p>Email Address</p>
+                                <p><%= emailID %></p>
+                            </div>
                         </div>
                     </div>
                 </div>
