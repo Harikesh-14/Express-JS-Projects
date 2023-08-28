@@ -193,7 +193,7 @@
 }
 
 .firstSection .empDetails .nameAndDetails .boxes{
-    width: 120%;
+    width: 125%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

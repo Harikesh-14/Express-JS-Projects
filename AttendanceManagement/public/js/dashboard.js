@@ -14,7 +14,16 @@ document.addEventListener('click', (event) => {
 })
 
 let logoutButton = document.getElementById('logoutButton')
-
 logoutButton.addEventListener('click', () => {
-    location.href = '/'
+    window.location.href = '/'
+})
+
+let attendanceBtn = document.getElementById('attendanceBtn')
+attendanceBtn.addEventListener('click', () => {
+    window.location.href = '/attendance'
+})
+
+let registerStudentsBtn = document.getElementById('registerStudentsBtn')
+registerStudentsBtn.addEventListener('click', () => {
+    window.location.href = '/register-students'
 })

@@ -61,4 +61,12 @@ router.post('/register-user', async (req, res) => {
     }
 });
 
+router.get('/attendance', (req, res) => {
+    res.render('attendance')
+})
+
+router.get('/register-students', (req, res) => {
+    res.render('registerStudents')
+})
+
 module.exports = router;
