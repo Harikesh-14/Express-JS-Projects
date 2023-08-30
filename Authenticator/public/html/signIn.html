@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="../css/signIn.css">
+</head>
+<body>
+
+    <!-- main login form -->
+    <form method="post">
+
+        <!-- login avatar -->
+        <div class="upperSide">
+            <img src="../pics/loginAvatar.png" alt="Login Avatar">
+            <h1>Sign In</h1>
+        </div>
+
+        <!-- login form content -->
+        <div class="lowerSide">
+
+            <!-- username box -->
+            <input type="email" name="signInEmail" id="username" placeholder="Email*" required>
+
+            <!-- password box -->
+            <input type="password" name="signInPassword" id="password" placeholder="Password*" required>
+
+            <!-- remember me div -->
+            <div class="rememberMe">
+                <input type="checkbox" name="remember" id="remember">
+                <label>Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <!-- sign in button -->
+            <button type="submit" id="signInButton">Sign In</button>
+        </div>
+
+        <!-- register -->
+        <div class="register">
+            <button type="button" id="signUpButton">Register</button>
+        </div>
+    </form>
+    <script>
+        let signUpButton = document.getElementById('signUpButton');
+
+        signUpButton.addEventListener('click', () => {
+            location.href = '/register-user'
+        })
+    </script>
+</body>
+</html>
