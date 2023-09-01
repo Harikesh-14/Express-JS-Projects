@@ -2,9 +2,13 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const userRegister = require('./db/userDetails');
+const passport = require('passport');
+const { initializePassport } = require('./passportConfig');
 require('./db/conn');
 
 const port = 3000;
+
+initializePassport()
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
