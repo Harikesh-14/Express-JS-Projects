@@ -8,7 +8,7 @@ require('./db/conn');
 
 const port = 3000;
 
-initializePassport()
+initializePassport(passport)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
