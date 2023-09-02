@@ -34,22 +34,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'signIn.html'));
 });
 
-app.post('/', passport.authenticate("local"), async (req, res) => {
-    // try{
-    //     const emailID = req.body.signInEmail
-    //     const password = req.body.signInPassword
-    //     const userFile = await userRegister.findOne({emailID, password})
+app.post('/', passport.authenticate("local", {
+    successRedirect: '/dashboard', // Redirect to the dashboard page on successful login
+    failureRedirect: '/',         // Redirect back to the login page on failure
+    failureFlash: true            // Enable flash messages for error handling (if you're using it)
+}));
 
-    //     if(userFile){
-    //         res.render('dashboard')
-    //     } else{
-    //         res.status(401).send("Invalid Username or Password")
-    //     }
-    // } catch(err){
-    //     console.log(err)
-    //     res.status(500).send("Internal Server Error")
-    // }
-})
+app.get('/dashboard', (req, res) => {
+    if (req.isAuthenticated()) {
+        res.render('dashboard');
+    }
+});
 
 app.listen(port, () => {
     console.log(`Your server is running at port: ${port}`);

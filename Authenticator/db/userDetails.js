@@ -12,6 +12,6 @@ const teacherDetailSchema = new mongoose.Schema({
     password: String,
 })
 
-const teacherDetail = new mongoose.model("TeachersDetails", teacherDetailSchema)
+const teacherDetail = new mongoose.model("TeachersDetails", teacherDetailSchema);
 
 module.exports = teacherDetail;

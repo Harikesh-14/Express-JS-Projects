@@ -1,14 +1,14 @@
 const LocalStrategy = require('passport-local').Strategy;
-const { User } = require('./db/userDetails');
+const teacherDetail = require('./db/userDetails'); // Import the correct model
 
 exports.initializePassport = (passport) => {
     passport.use(new LocalStrategy({
-        usernameField: "signInEmail",
+        usernameField: "signInEmail",  // Use the correct field name for the email
         passwordField: "signInPassword"
-    }, async (username, password, done) => {
-        const user = await User.findOne({ username });
-
+    }, async (email, password, done) => { // Change 'username' to 'email'
         try {
+            const user = await teacherDetail.findOne({ emailID: email }); // Use the correct field name
+
             if (!user) {
                 return done(null, false);
             }
@@ -16,24 +16,21 @@ exports.initializePassport = (passport) => {
             if (user.password !== password) {
                 return done(null, false);
             }
+
             return done(null, user);
         } catch (err) {
-            console.log(err);
+            console.error(err);
             return done(err, false);
         }
     }));
 
-    // mandatory step serializing and deserializing the user
-
-    // serializing means to save the user id until user logouts
     passport.serializeUser((user, done) => {
         done(null, user.id);
     });
 
-    // deserializing means to remove the user from the session after user logouts
     passport.deserializeUser(async (id, done) => {
         try {
-            const user = await User.findById(id);  // Use findById instead of findByID
+            const user = await teacherDetail.findById(id);
             done(null, user);
         } catch (err) {
             done(err, false);
