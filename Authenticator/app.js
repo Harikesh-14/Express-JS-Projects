@@ -2,9 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const expressSession = require('express-session')
-const userRegister = require('./db/userDetails');
+const teacherDetail = require('./db/userDetails');
 const passport = require('passport');
-const { initializePassport } = require('./passportConfig');
+const { initializePassport, isAuthenticated } = require('./passportConfig');
 require('./db/conn');
 
 const port = 3000;
@@ -40,11 +40,21 @@ app.post('/', passport.authenticate("local", {
     failureFlash: true            // Enable flash messages for error handling (if you're using it)
 }));
 
-app.get('/dashboard', (req, res) => {
-    if (req.isAuthenticated()) {
-        res.render('dashboard');
-    }
+app.get('/dashboard', isAuthenticated, (req, res) => {
+    // res.render('dashboard');
+    res.send(req.user)
 });
+
+app.get('/logout', (req, res) => {
+    req.logout((err) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Internal Server Error');
+        }
+        res.redirect('/');
+    });
+});
+
 
 app.listen(port, () => {
     console.log(`Your server is running at port: ${port}`);
