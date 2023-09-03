@@ -3,7 +3,7 @@ const teacherDetail = require('./db/userDetails'); // Import the correct model
 
 exports.initializePassport = (passport) => {
     passport.use(new LocalStrategy({
-        usernameField: "signInEmail",  // Use the correct field name for the email
+        usernameField: "signInEmail",  // Keep this as "signInEmail" to match your HTML form
         passwordField: "signInPassword"
     }, async (email, password, done) => { // Change 'username' to 'email'
         try {
@@ -38,11 +38,10 @@ exports.initializePassport = (passport) => {
     });
 };
 
-
 exports.isAuthenticated = (req, res, next) => {
-    if(req.user){
-        return next()
+    if(req.isAuthenticated()){
+        return next();
     }
 
-    res.redirect("/")
+    res.redirect("/");
 }

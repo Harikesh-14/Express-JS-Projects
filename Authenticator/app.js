@@ -26,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 // for public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // for ejs file
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
@@ -34,16 +35,29 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'signIn.html'));
 });
 
-app.post('/', passport.authenticate("local", {
-    successRedirect: '/dashboard', // Redirect to the dashboard page on successful login
-    failureRedirect: '/',         // Redirect back to the login page on failure
-    failureFlash: true            // Enable flash messages for error handling (if you're using it)
-}));
-
-app.get('/dashboard', isAuthenticated, (req, res) => {
-    // res.render('dashboard');
-    res.send(req.user)
+app.post('/', (req, res, next) => {
+    if (req.isAuthenticated()) {
+        req.logout(); // Log out the current user
+        console.log('User logged out');
+    }
+    passport.authenticate("local", {
+        successRedirect: '/dashboard',
+        failureRedirect: '/',
+        failureFlash: true
+    })(req, res, next);
 });
+
+app.get('/dashboard', isAuthenticated, async (req, res) => {
+    try {
+        const { firstName, lastName, emailID, phoneNumber, teacherID, location, gender } = req.user;
+        console.log('User profile retrieved:', req.user);
+        res.render('dashboard', { firstName, teacherID, lastName, emailID, phoneNumber, location, gender });
+    } catch (err) {
+        console.log(`An error occurred: ${err}`);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
 
 app.get('/logout', (req, res) => {
     req.logout((err) => {

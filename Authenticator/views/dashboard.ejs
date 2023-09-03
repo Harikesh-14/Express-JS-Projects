@@ -1,11 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Dashboard | <%= firstName %></title>
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
+
 <body>
-    <p>Hello World</p>
+    <div class="mainContainer">
+        <!-- side bar components -->
+        <div class="sideBar">
+            <h2>Attendance Manager</h2>
+
+            <!-- main tools -->
+            <div class="mainTools">
+                <ul>
+                    <li class="active" id="dashboardBtn"><i class="fa-solid fa-table-columns"></i> Dashboard</li>
+                    <li id="attendanceBtn"><i class="fa-solid fa-chart-simple"></i> Attendance</li>
+                    <li id="registerStudentsBtn"><i class="fa-solid fa-user-plus"></i> Add Students</li>
+                    <li><i class="fa-solid fa-users"></i> Members</li>
+                    <li><i class="fa-solid fa-bell"></i> Notifications</li>
+                </ul>
+            </div>
+
+            <!-- optional tools -->
+            <div class="optionalTools">
+                <ul>
+                    <li><i class="fa-solid fa-gear"></i> Settings</li>
+                    <li><i class="fa-solid fa-circle-info"></i> Help Center</li>
+                </ul>
+            </div>
+
+            <!-- Account Info Display -->
+            <div class="accountInfoDisplay">
+
+                <!-- profile pic -->
+                <img src="pics/loginAvatar.png">
+
+                <!-- profile name and role -->
+                <div class="nameAndRole">
+                    <p><%= firstName.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') %></p>
+                    <p><%= teacherID %></p>
+                </div>
+
+                <!-- toggle menu -->
+                <div class="toggleMenu" id="toggleMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="toggleDialogBox hide" id="toggleDialogBox">
+                    <button type="button" id="logoutButton">Logout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="rightComp">
+            <!-- first Section -->
+            <div class="firstSection">
+                <p>Employee Details</p>
+                <div class="empDetails">
+
+                    <!-- image of the faculty -->
+                    <img src="pics/loginAvatar.png" alt="Employee Image">
+
+                    <!-- main box of necessary details -->
+                    <div class="nameAndDetails">
+                        <p><%= firstName %> <%= lastName %></p>
+
+                        <div class="boxes">
+                            <!-- role of the employee -->
+                            <div class="box">
+                                <p>Role</p>
+                                <p>Teacher</p>
+                            </div>
+                            <!-- phone number of the employee -->
+                            <div class="box">
+                                <p>Phone Number</p>
+                                <p>(+91) <%= phoneNumber %></p>
+                            </div>
+                            <!-- email address of the employee -->
+                            <div class="box">
+                                <p>Email Address</p>
+                                <p><%= emailID %></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- important info -->
+                <div class="infoForFaculty">
+                    <!-- in time of the employee -->
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-right-from-bracket"></i></p>
+                        <div class="bunch">
+                            <p>08:00 AM</p>
+                            <p>In Time</p>
+                        </div>
+                    </div>
+
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-door-open"></i></p>
+                        <div class="bunch">
+                            <p>06:30 PM</p>
+                            <p>Check Out Time</p>
+                        </div>
+                    </div>
+
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-location-dot"></i></p>
+                        <div class="bunch">
+                            <p><%= location %></p>
+                            <p>Native</p>
+                        </div>
+                    </div>
+
+                    <div class="facultyInfo">
+                        <p><i class="fa-solid fa-user"></i></p>
+                        <div class="bunch">
+                            <p><%= gender %></p>
+                            <p>Gender</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- report error button -->
+                <div class="reportError">
+                    <button type="button" class="report"><i class="fa-solid fa-circle-exclamation"></i> Report Error</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/e6506fb756.js" crossorigin="anonymous"></script>
+    <script src="/js/dashboard.js"></script>
 </body>
+
 </html>
